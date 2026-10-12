@@ -1,0 +1,2 @@
+{% extends "metrics/base.html" %}
+{% block content %}<div class="panel form-panel"><h1>Add a product</h1><p class="subtitle">Enter the product details used to calculate revenue, profit, and inventory status.</p><form method="post">{% csrf_token %}{% for field in form %}<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}{% endfor %}<div class="form-actions"><button class="button">Save product</button><a class="button secondary" href="{% url 'dashboard' %}">Cancel</a></div></form></div>{% endblock %}
